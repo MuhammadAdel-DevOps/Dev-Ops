@@ -1,0 +1,30 @@
+---
+- hosts: node1
+  tasks:
+    - command: mount /dev/sr0 /mnt
+      ignore_errors: yes
+
+    - blockinfile:
+        path: /etc/yum.repos.d/ansible-test.repo
+        create: yes
+        block: |
+          [BaseOS]
+          name=ansible repo for base
+          baseurl=file:///mnt/BaseOS
+          enabled=1
+          gpgcheck=0
+
+          [AppStream]
+          name=ansible repo for app 
+          baseurl=file:///mnt/AppStream
+          enabled=1
+          gpgcheck=0
+      register: output
+
+    - debug: var=output
+
+    - name: Install dhcp-server
+      package:
+        name: dhcp-server
+        state: present
+

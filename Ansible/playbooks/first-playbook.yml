@@ -1,0 +1,15 @@
+---
+- name: first play
+  hosts: node1
+  tasks: 
+    - name: create a file 
+      file: 
+        path: /tmp/new-file
+        state: touch 
+      register: out
+    
+    - name: print exec of file module
+      debug:
+        var: out
+    - command: cat /etc/hosts
+      when: out.failed == true
