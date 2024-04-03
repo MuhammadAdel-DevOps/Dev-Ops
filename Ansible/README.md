@@ -1,7 +1,7 @@
 
 # Ansible
 
-Ansible is an open source configuration management and orchestration utility. It can automate and standardize
+Ansible is an open source configuration management and orchestration utility. It can automate and standardize 
 the configuration of remote hosts and virtual machines. Its orchestration functionality allows Ansible to
 coordinate the launch and graceful shutdown of multitiered applications. Because of this, Ansible can perform
 rolling updates of multiple systems in a way that results in zero downtime.
