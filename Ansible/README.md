@@ -59,10 +59,11 @@ Ansible is written in Python, and as a result you have to install Python on the 
 5. Type rpm -qa | grep python to verify that Python 3 is also installed.
 --------------------------------------------------------
 # Installing on CentOS 8
-Method 1: Install Ansible on CentOS 8 / RHEL 8 from EPEL <br>
+
 ### sudo dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm <br>
 ### sudo dnf install  --enablerepo epel-playground  ansible
 ### ansible --version
+----------------------------------------------------------
 # install Ansible on Ubuntu 22.04
 ### sudo apt update 
 ### sudo apt-add-repository ppa: ansible/ansible
