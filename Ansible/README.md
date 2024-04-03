@@ -50,14 +50,27 @@ release that is used in RHEL 8 is based on Python 3.6. There is no direct relati
 * A dedicated user account that is configured with SSH and sudo permissions
   
 Ansible is written in Python, and as a result you have to install Python on the Ansible controller node as well as the Ansible managed nodes.
-
-## Installing Ansible on RHEL 8
+--------------------------------------
+# Installing Ansible on RHEL 8/9
 1. On the RHEL 8/9 control node, open a root shell and type subscription-manager repos --list. This shows you a list of currently configured repositories. You should see the standard RHEL 8 repositories.
 2. Type subscription-manager repos --enable=ansible-2-for-rhel-8-x86_64-rpms to add the Ansible 2.x repository.
 3. Use yum install ansible to install the Ansible software.
 4. Use ansible --version to verify that the Ansible software has been installed.
 5. Type rpm -qa | grep python to verify that Python 3 is also installed.
-   
+--------------------------------------------------------
+# Installing on CentOS 8
+Method 1: Install Ansible on CentOS 8 / RHEL 8 from EPEL <br>
+### sudo dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm <br>
+### sudo dnf install  --enablerepo epel-playground  ansible
+### ansible --version
+# install Ansible on Ubuntu 22.04
+### sudo apt update 
+### sudo apt-add-repository ppa: ansible/ansible
+### sudo apt install ansible
+### sudo add-apt-repository --yes --update ppa:ansible/ansible
+### ansible --version
+---------------------------------------------------
+
 ## CONFIGURING MANAGED HOSTS
 1. systemctl status sshd
 2. rpm -qa | grep python (to see if it’s installed or not, if not install python module)
